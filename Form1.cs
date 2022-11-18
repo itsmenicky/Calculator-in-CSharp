@@ -151,29 +151,29 @@ namespace Calculadora
             if (operacao == "SOMA")
             {
                 resultado = valor1 + valor2;
-                txtbox.Text = Convert.ToString(resultado);
             }
             else if (operacao == "SUB")
             {
                 resultado = valor1 - valor2;
-                txtbox.Text = Convert.ToString(resultado);
             }
             else if (operacao == "MULTI")
             {
                 resultado = valor1 * valor2;
-                txtbox.Text = Convert.ToString(resultado);
             }
             else if (operacao == "PORC")
             {
                 resultado = (valor1 * valor2)/100;
-                txtbox.Text = Convert.ToString(resultado);
             }
             else
             {
                 resultado = valor1 / valor2;
-                txtbox.Text = Convert.ToString(resultado);
             }
-            //txtbox.Text = String.Format("{0:0.00}", resultado);      
+            if((resultado % 1) > 0){
+                txtbox.Text = String.Format("{0:0.00}", resultado);      
+            }
+            else{
+                txtbox.Text = String.Format("{0:0}", resultado);      
+            }
         }
     }
 }
